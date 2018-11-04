@@ -5,11 +5,31 @@ package com.izmir.remidi;
  * @author Izmir
  */
 public class Driver {
-    private String namaDriver;
-    private int kodeDriver;
-    private int biaya;
+    private String kode;
+    private String nama;
     
-    public Driver(){
+    public Driver() {
         
+    }
+    
+    public Driver( String kode, String nama){
+        this.kode = kode;
+        this.nama = nama;
+    }
+
+    public String getNama() {
+        return nama;
+    }
+
+    public void setNama(String nama) {
+        this.nama = nama;
+    }
+
+    public String getKode() {
+        return kode;
+    }
+
+    public void setKode(String kode) {
+        this.kode = kode;
     }
 }

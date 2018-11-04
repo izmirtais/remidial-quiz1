@@ -6,18 +6,18 @@ package com.izmir.remidi;
  */
 public class Pelanggan {
     private String nama;
-    private String pesanan;
+    private Pesanan pesanan;
     private Transaksi transaksi;
-    private int biaya;
+    private int jmlBrg;
     
-    public Pelanggan(){
+    public Pelanggan() {
         
     }
-
-    public Pelanggan(String nama, String pesanan, int biaya) {
+    public Pelanggan(String nama, Pesanan pesanan, Transaksi transaksi, int jmlBrg){
         this.nama = nama;
         this.pesanan = pesanan;
-        this.biaya = biaya;
+        this.transaksi = transaksi;
+        this.jmlBrg = jmlBrg;
     }
 
     public String getNama() {
@@ -28,20 +28,37 @@ public class Pelanggan {
         this.nama = nama;
     }
 
-    public String getPesanan() {
+    public Pesanan getPesanan() {
         return pesanan;
     }
 
-    public void setPesanan(String pesanan) {
+    public void setPesanan(Pesanan pesanan) {
         this.pesanan = pesanan;
     }
 
-    public int getBiaya() {
-        return biaya;
+    public int getJmlBrg() {
+        return jmlBrg;
     }
 
-    public void setBiaya(int biaya) {
-        this.biaya = biaya;
+    public void setJmlBrg(int jmlBrg) {
+        this.jmlBrg = jmlBrg;
+ 
+    }
+
+    public Transaksi getTransaksi() {
+        return transaksi;
+    }
+
+    public void setTransaksi(Transaksi transaksi) {
+        this.transaksi = transaksi;
     }
     
+    
+    public int biayaBelanjaTotalTunai() {
+        return pesanan.hitungBiaya(jmlBrg);
+    }
+    
+    public int biayaBelanjaTotalDebit() {
+        return pesanan.hitungBiaya(jmlBrg) - transaksi.biayaTambahan(jmlBrg);
+    }
 }

@@ -7,16 +7,16 @@ package com.izmir.remidi;
 public class Pesanan {
 private String namaBrg;
     private int harga;
-    private int jumlahBrg;
+    private int jmlhBrg;
     
     public Pesanan() {
         
     }
     
-    public Pesanan(String namaBrg, int harga, int jumlahBrg) {
+    public Pesanan(String namaBrg, int harga, int jmlhBrg) {
         this.namaBrg = namaBrg;
         this.harga = harga;
-        this.jumlahBrg = jumlahBrg;
+        this.jmlhBrg = jmlhBrg;
     }
 
     public String getNamaBrg() {
@@ -35,16 +35,16 @@ private String namaBrg;
         this.harga = harga;
     }
 
-    public int getJumlahBrg() {
-        return jumlahBrg;
+    public int getJmlhBrg() {
+        return jmlhBrg;
     }
 
-    public void setJumlahBrg(int jumlahBrg) {
-        this.jumlahBrg = jumlahBrg;
+    public void setJmlhBrg(int jmlhBrg) {
+        this.jmlhBrg = jmlhBrg;
     }
     
-        public int hitungBiaya(int jumlahBrg) {
-        return harga * jumlahBrg;
+        public int hitungBiaya(int jmlhBrg) {
+        return harga * jmlhBrg;
     }
 }
 
